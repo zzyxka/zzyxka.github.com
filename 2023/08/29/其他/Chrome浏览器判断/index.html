@@ -27,18 +27,29 @@
   <section class="article-body">
     <div class="post-toc">
       <h3>本文目录</h3>
-      
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%B9%E6%A1%88"><span class="toc-text">方案</span></a></li></ol>
     </div>
     <div class="post-container">
       <div class="post-title">
         <h2 class="title">
-          关于我
+          判断用户环境/是否为 Chrome 浏览器
         </h2>
       </div>
       <div class="post-meta">
       </div>
       <div class="post-content">
-        <p>在广边缘前端小工。</p>
+        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>toB 业务系统只打算兼容 Chrome，其他浏览器层出不穷的兼容问题不打算考虑。新版 Edge 和 Chrome 特性基本一致，所以不考虑细分判断 Edge 。</p>
+<h1 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h1><p>使用下述判断基本满足条件（PC 和 移动端的 Chrome&#x2F;Edge 访问）。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">isChrome = <span class="regexp">/Chrome/</span>.<span class="title function_">test</span>(navigator.<span class="property">userAgent</span>) || <span class="regexp">/CriOS/</span>.<span class="title function_">test</span>(navigator.<span class="property">userAgent</span>);</span><br></pre></td></tr></table></figure>
+
+<p>示例页面：<a href="https://zzyxka.github.io/pages/browser-ua/index.html">https://zzyxka.github.io/pages/browser-ua/index.html</a></p>
+<p><code>CriOS</code> 主要是为了判断 IOS 移动端 Chrome，原计划是通过 <code>window.chrome</code> 来判断，但经过测试发现，IOS 下的 Chrome，既没有 <code>window.chrome</code> 对象，又没有 包含 <code>Chrome</code> 的 userAgent。</p>
+<span id="more"></span>
+
+<p>找到两个相对官方答案如下：</p>
+<p><a target="_blank" rel="noopener" href="https://developer.chrome.com/docs/multidevice/user-agent/">Chrome Developers &#x2F; User-Agent Strings</a><br><img src="https://raw.githubusercontent.com/zzyxka/images/main/2022-11-01-14-36-23.png" alt="Chrome Developers / User-Agent Strings"></p>
+<p><a target="_blank" rel="noopener" href="https://chromium.googlesource.com/chromium/src/+/master/docs/ios/user_agent.md#:~:text=The%20User%20Agent%20%28UA%29%20in%20Chrome%20for%20iOS,X%29%20AppleWebKit%2F602.1.50%20%28KHTML%2C%20like%20Gecko%29%20CriOS%2F56.0.2924.75%20Mobile%2F14E5239e%20Safari%2F602.1">Chromium Docs</a></p>
+<p><img src="https://raw.githubusercontent.com/zzyxka/images/main/2022-11-01-14-31-37.png" alt="Chromium Docs"></p>
 
       </div>
     </div>

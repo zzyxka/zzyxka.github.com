@@ -27,18 +27,20 @@
   <section class="article-body">
     <div class="post-toc">
       <h3>本文目录</h3>
-      
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%97%AE%E9%A2%98"><span class="toc-text">问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-text">解决方案</span></a></li></ol>
     </div>
     <div class="post-container">
       <div class="post-title">
         <h2 class="title">
-          关于我
+          github相关网址打不开的解决办法
         </h2>
       </div>
       <div class="post-meta">
       </div>
       <div class="post-content">
-        <p>在广边缘前端小工。</p>
+        <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>常常因为网络环境，遇到 github.com、github.io、raw.githubusercontent.com 等网址打不开，比如：博客用 raw.githubusercontent.com 图床，出现图片裂开等情况。</p>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>找一个域名解析的网站（比如：<a target="_blank" rel="noopener" href="https://www.ipaddress.com/site/github.com">https://www.ipaddress.com/site/github.com</a>），把地址输进去获取 IP，再配置 hosts。edge 可使用 <a href="edge://net-internals/#dns">edge:&#x2F;&#x2F;net-internals&#x2F;#dns</a> 再清空下 host cache，同理 chrome 更换为 <a href="chrome://net-internals/#dns">chrome:&#x2F;&#x2F;net-internals&#x2F;#dns</a> 来清空缓存。</p>
+<span id="more"></span>
 
       </div>
     </div>

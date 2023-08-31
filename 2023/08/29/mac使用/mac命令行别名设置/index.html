@@ -32,13 +32,24 @@
     <div class="post-container">
       <div class="post-title">
         <h2 class="title">
-          关于我
+          mac 命令行别名设置
         </h2>
       </div>
       <div class="post-meta">
       </div>
       <div class="post-content">
-        <p>在广边缘前端小工。</p>
+        <p>通过设置一些命令行别名来提升开发效率，比如：vscode 的 code 命令，结合别名，可以通过终端快速打开某个项目。</p>
+<p>默认 mac 终端为 bash 指令，操作步骤如下</p>
+<ol>
+<li>编辑 <code>~/.bash_profile</code> 增加 <code>alias blog=&quot;code ~/Documents/blog&quot;</code></li>
+<li>重启终端，或者执行 <code>source ~/.bash_profile</code> 使配置文件生效</li>
+<li>在终端输入 <code>blog</code> 即可在 vscode 打开对应的项目</li>
+</ol>
+<p>如果安装了 zsh，则需要修改 <code>~/.zshrc</code> 其他步骤及内容不变。</p>
+<span id="more"></span>
+
+<p>安装 vscode 的 code 命令：在 vscode 下 F1 后，输入 <code>install code</code>，回车。<br><img src="https://raw.githubusercontent.com/zzyxka/images/main/2023-03-22-19-53-32.png" alt="2023-03-22-19-53-32"></p>
+<p>最终效果<br><img src="https://raw.githubusercontent.com/zzyxka/images/main/2023-03-22-19-52-22.gif" alt="2023-03-22-19-52-22"></p>
 
       </div>
     </div>
