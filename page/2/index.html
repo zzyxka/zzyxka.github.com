@@ -126,16 +126,20 @@
     
     <article class="post post-list-item">
       <div class="post-title">
-        <a class="post-title-link" href="/2023/08/29/mac%E4%BD%BF%E7%94%A8/mac%E6%9D%80%E6%AD%BB%E6%9F%90%E4%B8%AA%E5%8D%A0%E7%94%A8%E7%AB%AF%E5%8F%A3%E7%9A%84%E8%BF%9B%E7%A8%8B/">
-          mac 杀死某个占用端口的进程
+        <a class="post-title-link" href="/2023/08/29/%E5%85%B6%E4%BB%96/Chrome%E6%B5%8F%E8%A7%88%E5%99%A8%E5%88%A4%E6%96%AD/">
+          判断用户环境/是否为 Chrome 浏览器
         </a>
       </div>
       <div class="post-content">
-        <p>查看占用端口的进程：<code>lsof -i :端口号</code></p>
-<p>杀死指定进程：<code>kill -9 要杀死的进程ID</code></p>
+        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>toB 业务系统只打算兼容 Chrome，其他浏览器层出不穷的兼容问题不打算考虑。新版 Edge 和 Chrome 特性基本一致，所以不考虑细分判断 Edge 。</p>
+<h1 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h1><p>使用下述判断基本满足条件（PC 和 移动端的 Chrome&#x2F;Edge 访问）。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">isChrome = <span class="regexp">/Chrome/</span>.<span class="title function_">test</span>(navigator.<span class="property">userAgent</span>) || <span class="regexp">/CriOS/</span>.<span class="title function_">test</span>(navigator.<span class="property">userAgent</span>);</span><br></pre></td></tr></table></figure>
+
+<p>示例页面：<a href="https://zzyxka.github.io/pages/browser-ua/index.html">https://zzyxka.github.io/pages/browser-ua/index.html</a></p>
+<p><code>CriOS</code> 主要是为了判断 IOS 移动端 Chrome，原计划是通过 <code>window.chrome</code> 来判断，但经过测试发现，IOS 下的 Chrome，既没有 <code>window.chrome</code> 对象，又没有 包含 <code>Chrome</code> 的 userAgent。</p>
       </div>
       <div class="post-meta">
-        <a class="post-read-more-link" href="/2023/08/29/mac%E4%BD%BF%E7%94%A8/mac%E6%9D%80%E6%AD%BB%E6%9F%90%E4%B8%AA%E5%8D%A0%E7%94%A8%E7%AB%AF%E5%8F%A3%E7%9A%84%E8%BF%9B%E7%A8%8B/">查看全文</a>
+        <a class="post-read-more-link" href="/2023/08/29/%E5%85%B6%E4%BB%96/Chrome%E6%B5%8F%E8%A7%88%E5%99%A8%E5%88%A4%E6%96%AD/">查看全文</a>
       </div>
     </article>
     
