@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
-	<title>Fizzy Zhang</title>
-	<link rel="shortcut icon" href="/images/favicon.ico"> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <title>Fizzy Zhang</title>
+  <link rel="shortcut icon" href="/images/favicon.ico"> 
 <link rel="stylesheet" href="/css/style.css">
  
 <script src="/js/jquery.js"></script>
@@ -12,7 +12,6 @@
 <script src="/js/search.js"></script>
 
 <meta name="generator" content="Hexo 6.3.0"></head>
-
 
 <body>
   <article class="home-container">
@@ -216,15 +215,15 @@
         </a>
       </div>
       <div class="post-content">
-        <ol>
+        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><ol>
 <li>创建项目：包管理、镜像源</li>
 <li><code>webpack</code> 打包配置：基础打包配置文件、使用 plugin 处理 html</li>
 <li>在项目中使用 CSS：CSS Module, postCSS, 分离打包CSS</li>
 <li>在项目中使用 React 和 TS - Babel</li>
 <li>规范编码 Lint - ESLint, StyleLint</li>
-<li>客户端路由 ReactRouter</li>
-<li>开发生产分离：devServer、HMR；分包、treeShaking</li>
-<li><code>webpack</code> 常用配置扩展</li>
+<li>使用 Prettier 格式化项目</li>
+<li>客户端路由 ReactRouter （Lazy Loading 方案）</li>
+<li>开发生产分离：devServer、HMR；treeShaking、css 压缩；多线程打包、外部 CDN 等等</li>
 </ol>
       </div>
       <div class="post-meta">
@@ -239,8 +238,8 @@
         </a>
       </div>
       <div class="post-content">
-        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>项目遇到第三方依赖升级到 <a href="mailto:&#98;&#97;&#98;&#101;&#108;&#64;&#118;&#55;&#x2e;&#50;&#48;">&#98;&#97;&#98;&#101;&#108;&#64;&#118;&#55;&#x2e;&#50;&#48;</a>，导致项目中的 generator 转义存在问题。</p>
-<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>同理某些依赖包升级与当前系统脚手架不兼容的情况，使用 <a href="mailto:&#110;&#x70;&#x6d;&#x40;&#x76;&#x38;&#x2e;&#x33;">&#110;&#x70;&#x6d;&#x40;&#x76;&#x38;&#x2e;&#x33;</a>+ 支持的 overrides 来锁定包版本，这样所有依赖树中对应的包都会限制为指定版本。</p>
+        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>项目遇到第三方依赖升级到 <a href="mailto:&#x62;&#x61;&#x62;&#101;&#x6c;&#64;&#118;&#x37;&#46;&#x32;&#x30;">&#x62;&#x61;&#x62;&#101;&#x6c;&#64;&#118;&#x37;&#46;&#x32;&#x30;</a>，导致项目中的 generator 转义存在问题。</p>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>同理某些依赖包升级与当前系统脚手架不兼容的情况，使用 <a href="mailto:&#110;&#x70;&#x6d;&#64;&#x76;&#x38;&#x2e;&#51;">&#110;&#x70;&#x6d;&#64;&#x76;&#x38;&#x2e;&#51;</a>+ 支持的 overrides 来锁定包版本，这样所有依赖树中对应的包都会限制为指定版本。</p>
       </div>
       <div class="post-meta">
         <a class="post-read-more-link" href="/2023/08/29/%E5%85%B6%E4%BB%96/npm%E4%BE%9D%E8%B5%96%E5%8C%85%E7%89%88%E6%9C%AC%E9%94%81%E5%AE%9A/">查看全文</a>
@@ -317,16 +316,20 @@
     
     <article class="post post-list-item">
       <div class="post-title">
-        <a class="post-title-link" href="/2023/08/29/%E5%85%B6%E4%BB%96/github-address/">
-          github相关网址打不开的解决办法
+        <a class="post-title-link" href="/2023/08/29/%E5%85%B6%E4%BB%96/Chrome%E6%B5%8F%E8%A7%88%E5%99%A8%E5%88%A4%E6%96%AD/">
+          判断用户环境/是否为 Chrome 浏览器
         </a>
       </div>
       <div class="post-content">
-        <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>常常因为网络环境，遇到 github.com、github.io、raw.githubusercontent.com 等网址打不开，比如：博客用 raw.githubusercontent.com 图床，出现图片裂开等情况。</p>
-<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>找一个域名解析的网站（比如：<a target="_blank" rel="noopener" href="https://www.ipaddress.com/site/github.com">https://www.ipaddress.com/site/github.com</a>），把地址输进去获取 IP，再配置 hosts。edge 可使用 <a href="edge://net-internals/#dns">edge:&#x2F;&#x2F;net-internals&#x2F;#dns</a> 再清空下 host cache，同理 chrome 更换为 <a href="chrome://net-internals/#dns">chrome:&#x2F;&#x2F;net-internals&#x2F;#dns</a> 来清空缓存。</p>
+        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>toB 业务系统只打算兼容 Chrome，其他浏览器层出不穷的兼容问题不打算考虑。新版 Edge 和 Chrome 特性基本一致，所以不考虑细分判断 Edge 。</p>
+<h1 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h1><p>使用下述判断基本满足条件（PC 和 移动端的 Chrome&#x2F;Edge 访问）。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">isChrome = <span class="regexp">/Chrome/</span>.<span class="title function_">test</span>(navigator.<span class="property">userAgent</span>) || <span class="regexp">/CriOS/</span>.<span class="title function_">test</span>(navigator.<span class="property">userAgent</span>);</span><br></pre></td></tr></table></figure>
+
+<p>示例页面：<a href="https://zzyxka.github.io/pages/browser-ua/index.html">https://zzyxka.github.io/pages/browser-ua/index.html</a></p>
+<p><code>CriOS</code> 主要是为了判断 IOS 移动端 Chrome，原计划是通过 <code>window.chrome</code> 来判断，但经过测试发现，IOS 下的 Chrome，既没有 <code>window.chrome</code> 对象，又没有 包含 <code>Chrome</code> 的 userAgent。</p>
       </div>
       <div class="post-meta">
-        <a class="post-read-more-link" href="/2023/08/29/%E5%85%B6%E4%BB%96/github-address/">查看全文</a>
+        <a class="post-read-more-link" href="/2023/08/29/%E5%85%B6%E4%BB%96/Chrome%E6%B5%8F%E8%A7%88%E5%99%A8%E5%88%A4%E6%96%AD/">查看全文</a>
       </div>
     </article>
     

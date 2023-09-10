@@ -279,6 +279,13 @@ code {
 .highlight td.code .line .title.function_ {
   color: #ebeb9b;
 }
+.highlight td.code .line .selector-class,
+.highlight td.code .line .selector-tag {
+  color: #8ed588;
+}
+.highlight td.code .line .attribute {
+  color: #cbaaf9;
+}
 .highlight,
 .highlight>table,
 .highlight>table>tbody,
