@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <title>Fizzy Zhang</title>
+  <link rel="shortcut icon" href="/images/favicon.ico"> 
+<link rel="stylesheet" href="/css/style.css">
+ 
+<script src="/js/jquery.js"></script>
+ 
+<script src="/js/search.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <article class="article-container">
+  <section class="header-container">
+  <a class="header-title" href="/">
+    <svg t="1693387181307" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4053" width="20" height="20">
+      <path d="M946.5 505L560.1 118.8l-25.9-25.9c-12.3-12.2-32.1-12.2-44.4 0L77.5 505c-12.3 12.3-18.9 28.6-18.8 46 0.4 35.2 29.7 63.3 64.9 63.3h42.5V940h691.8V614.3h43.4c17.1 0 33.2-6.7 45.3-18.8 12.1-12.1 18.7-28.2 18.7-45.3 0-17-6.7-33.1-18.8-45.2zM568 868H456V664h112v204z m217.9-325.7V868H632V640c0-22.1-17.9-40-40-40H432c-22.1 0-40 17.9-40 40v228H238.1V542.3h-96l370-369.7 23.1 23.1L882 542.3h-96.1z" p-id="4054" fill="#515151"></path>
+    </svg>
+    <span>Fizzy Zhang</span>
+  </a>
+</section>
+  <section class="article-body">
+    <div class="post-toc">
+      <h3>本文目录</h3>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%97%AE%E9%A2%98"><span class="toc-text">问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-text">解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#github520"><span class="toc-text">github520</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%B7%E6%96%B0-DNS-%E7%BC%93%E5%AD%98"><span class="toc-text">刷新 DNS 缓存</span></a></li></ol></li></ol>
+    </div>
+    <div class="post-container">
+      <div class="post-title">
+        <h2 class="title">
+          github打不开的解决办法
+        </h2>
+      </div>
+      <div class="post-meta">
+      </div>
+      <div class="post-content">
+        <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>常常因为网络环境，遇到 github.com、github.io、raw.githubusercontent.com 等网址打不开，比如：博客用 raw.githubusercontent.com 图床，出现图片裂开等情况。</p>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>通过多种方式（亲测只有 github520 方案稳定些），改 hosts，让其能够成功解析出 IP 地址，从而访问 github.com 等网址。</p>
+<h2 id="github520"><a href="#github520" class="headerlink" title="github520"></a>github520</h2><p><a target="_blank" rel="noopener" href="https://gitee.com/klmahuaw/GitHub520">https://gitee.com/klmahuaw/GitHub520</a></p>
+<h2 id="刷新-DNS-缓存"><a href="#刷新-DNS-缓存" class="headerlink" title="刷新 DNS 缓存"></a>刷新 DNS 缓存</h2><ul>
+<li>改完 hosts 后 edge 可使用 <a href="edge://net-internals/#dns">edge:&#x2F;&#x2F;net-internals&#x2F;#dns</a> 再清空下 host cache</li>
+<li>同理 chrome 使用 <a href="chrome://net-internals/#dns">chrome:&#x2F;&#x2F;net-internals&#x2F;#dns</a> 来清空缓存</li>
+<li>mac 可使用 <code>sudo killall -HUP mDNSResponder</code> 刷新系统 hosts 解析</li>
+</ul>
+<span id="more"></span>
+
+      </div>
+    </div>
+  </section>
+</article>
+<!-- go-top -->
+<a id="goTop" class="go-top" type="button">
+  <svg t="1693380723883" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3999" width="20" height="20">
+    <path d="M825.568 555.328l-287.392-289.28C531.808 259.648 523.488 256.576 515.2 256.64 514.08 256.544 513.12 256 512 256c-4.672 0-9.024 1.088-13.024 2.88-4.032 1.536-7.872 3.872-11.136 7.136l-259.328 258.88c-12.512 12.48-12.544 32.736-0.032 45.248 6.24 6.272 14.432 9.408 22.656 9.408 8.192 0 16.352-3.136 22.624-9.344L480 364.288 480 928c0 17.696 14.336 32 32 32s32-14.304 32-32L544 362.72l236.192 237.728c6.24 6.272 14.496 9.44 22.688 9.44s16.32-3.104 22.56-9.312C838.016 588.128 838.048 567.84 825.568 555.328zM864 192 160 192C142.336 192 128 177.664 128 160s14.336-32 32-32l704 0c17.696 0 32 14.336 32 32S881.696 192 864 192z" fill="#ffffff" p-id="4000"></path>
+  </svg>
+</a>
+<script>
+  goTop.addEventListener('click', function(e) {
+    document.querySelector('.post-container').scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  });
+</script>
+</body>
+
+</html>

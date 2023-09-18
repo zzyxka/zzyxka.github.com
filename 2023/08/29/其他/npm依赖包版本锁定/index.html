@@ -26,7 +26,7 @@
   <section class="article-body">
     <div class="post-toc">
       <h3>本文目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-text">解决方案</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AD%89%E4%BB%B7%E6%96%B9%E6%A1%88"><span class="toc-text">等价方案</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%98%E5%A4%96%E8%AF%9D%EF%BC%9A-x62-97-x62-101-108-x40-118-x37-x2e-50-x30-%E9%80%A0%E6%88%90%E7%9A%84%E7%9B%B8%E5%85%B3%E5%BD%B1%E5%93%8D"><span class="toc-text">题外话：babel@v7.20 造成的相关影响</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-text">解决方案</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AD%89%E4%BB%B7%E6%96%B9%E6%A1%88"><span class="toc-text">等价方案</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%98%E5%A4%96%E8%AF%9D%EF%BC%9A-x62-97-x62-101-108-64-x76-x37-46-x32-x30-%E9%80%A0%E6%88%90%E7%9A%84%E7%9B%B8%E5%85%B3%E5%BD%B1%E5%93%8D"><span class="toc-text">题外话：babel@v7.20 造成的相关影响</span></a></li></ol>
     </div>
     <div class="post-container">
       <div class="post-title">
@@ -37,8 +37,8 @@
       <div class="post-meta">
       </div>
       <div class="post-content">
-        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>项目遇到第三方依赖升级到 <a href="mailto:&#x62;&#x61;&#x62;&#101;&#x6c;&#64;&#118;&#x37;&#46;&#x32;&#x30;">&#x62;&#x61;&#x62;&#101;&#x6c;&#64;&#118;&#x37;&#46;&#x32;&#x30;</a>，导致项目中的 generator 转义存在问题。</p>
-<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>同理某些依赖包升级与当前系统脚手架不兼容的情况，使用 <a href="mailto:&#110;&#x70;&#x6d;&#64;&#x76;&#x38;&#x2e;&#51;">&#110;&#x70;&#x6d;&#64;&#x76;&#x38;&#x2e;&#51;</a>+ 支持的 overrides 来锁定包版本，这样所有依赖树中对应的包都会限制为指定版本。</p>
+        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>项目遇到第三方依赖升级到 <a href="mailto:&#x62;&#x61;&#x62;&#x65;&#x6c;&#64;&#118;&#55;&#x2e;&#x32;&#x30;">&#x62;&#x61;&#x62;&#x65;&#x6c;&#64;&#118;&#55;&#x2e;&#x32;&#x30;</a>，导致项目中的 generator 转义存在问题。</p>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>同理某些依赖包升级与当前系统脚手架不兼容的情况，使用 <a href="mailto:&#110;&#112;&#x6d;&#64;&#x76;&#x38;&#x2e;&#x33;">&#110;&#112;&#x6d;&#64;&#x76;&#x38;&#x2e;&#x33;</a>+ 支持的 overrides 来锁定包版本，这样所有依赖树中对应的包都会限制为指定版本。</p>
 <span id="more"></span>
 
 <p>以 babel 举例：</p>
@@ -48,7 +48,7 @@
 <p>总之，还是 pnpm 大法好，一次性解决此类问题，速度也有较大提升。</p>
 <h1 id="等价方案"><a href="#等价方案" class="headerlink" title="等价方案"></a>等价方案</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yarn resolutions</span><br><span class="line">pnpm overrides</span><br><span class="line">npm8  overrides</span><br></pre></td></tr></table></figure>
 
-<h1 id="题外话：-x62-97-x62-101-108-x40-118-x37-x2e-50-x30-造成的相关影响"><a href="#题外话：-x62-97-x62-101-108-x40-118-x37-x2e-50-x30-造成的相关影响" class="headerlink" title="题外话：&#x62;&#97;&#x62;&#101;&#108;&#x40;&#118;&#x37;&#x2e;&#50;&#x30; 造成的相关影响"></a>题外话：<a href="mailto:&#x62;&#97;&#x62;&#101;&#108;&#x40;&#118;&#x37;&#x2e;&#50;&#x30;">&#x62;&#97;&#x62;&#101;&#108;&#x40;&#118;&#x37;&#x2e;&#50;&#x30;</a> 造成的相关影响</h1><p>报错：Uncaught (in promise) Error: First argument to <code>createDraft</code> must be a plain object, an array, or an immerable object<br>    at V.createDraft …</p>
+<h1 id="题外话：-x62-97-x62-101-108-64-x76-x37-46-x32-x30-造成的相关影响"><a href="#题外话：-x62-97-x62-101-108-64-x76-x37-46-x32-x30-造成的相关影响" class="headerlink" title="题外话：&#x62;&#97;&#x62;&#101;&#108;&#64;&#x76;&#x37;&#46;&#x32;&#x30; 造成的相关影响"></a>题外话：<a href="mailto:&#x62;&#97;&#x62;&#101;&#108;&#64;&#x76;&#x37;&#46;&#x32;&#x30;">&#x62;&#97;&#x62;&#101;&#108;&#64;&#x76;&#x37;&#46;&#x32;&#x30;</a> 造成的相关影响</h1><p>报错：Uncaught (in promise) Error: First argument to <code>createDraft</code> must be a plain object, an array, or an immerable object<br>    at V.createDraft …</p>
 <p><img src="https://raw.githubusercontent.com/zzyxka/images/main/2022-11-07-19-38-16.png" alt="immer createDraft Error"></p>
 <p><img src="https://raw.githubusercontent.com/zzyxka/images/main/2022-11-07-19-41-41.png" alt="debugger immer"></p>
 

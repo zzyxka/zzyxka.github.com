@@ -125,6 +125,55 @@
     
     <article class="post post-list-item">
       <div class="post-title">
+        <a class="post-title-link" href="/2023/09/18/%E4%BB%8E%E6%90%AD%E5%BB%BA%E5%88%B0%E4%B8%8A%E7%BA%BF/%E7%BC%96%E5%86%99%20webpack-plugin/">
+          
+        </a>
+      </div>
+      <div class="post-content">
+        
+      </div>
+      <div class="post-meta">
+        <a class="post-read-more-link" href="/2023/09/18/%E4%BB%8E%E6%90%AD%E5%BB%BA%E5%88%B0%E4%B8%8A%E7%BA%BF/%E7%BC%96%E5%86%99%20webpack-plugin/">查看全文</a>
+      </div>
+    </article>
+    
+    <article class="post post-list-item">
+      <div class="post-title">
+        <a class="post-title-link" href="/2023/09/18/%E4%BB%8E%E6%90%AD%E5%BB%BA%E5%88%B0%E4%B8%8A%E7%BA%BF/nginx%20%E9%85%8D%E7%BD%AE/">
+          Nginx 配置-前端向
+        </a>
+      </div>
+      <div class="post-content">
+        
+      </div>
+      <div class="post-meta">
+        <a class="post-read-more-link" href="/2023/09/18/%E4%BB%8E%E6%90%AD%E5%BB%BA%E5%88%B0%E4%B8%8A%E7%BA%BF/nginx%20%E9%85%8D%E7%BD%AE/">查看全文</a>
+      </div>
+    </article>
+    
+    <article class="post post-list-item">
+      <div class="post-title">
+        <a class="post-title-link" href="/2023/09/10/%E5%85%B6%E4%BB%96/github%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE/">
+          github打不开的解决办法
+        </a>
+      </div>
+      <div class="post-content">
+        <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>常常因为网络环境，遇到 github.com、github.io、raw.githubusercontent.com 等网址打不开，比如：博客用 raw.githubusercontent.com 图床，出现图片裂开等情况。</p>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>通过多种方式（亲测只有 github520 方案稳定些），改 hosts，让其能够成功解析出 IP 地址，从而访问 github.com 等网址。</p>
+<h2 id="github520"><a href="#github520" class="headerlink" title="github520"></a>github520</h2><p><a target="_blank" rel="noopener" href="https://gitee.com/klmahuaw/GitHub520">https://gitee.com/klmahuaw/GitHub520</a></p>
+<h2 id="刷新-DNS-缓存"><a href="#刷新-DNS-缓存" class="headerlink" title="刷新 DNS 缓存"></a>刷新 DNS 缓存</h2><ul>
+<li>改完 hosts 后 edge 可使用 <a href="edge://net-internals/#dns">edge:&#x2F;&#x2F;net-internals&#x2F;#dns</a> 再清空下 host cache</li>
+<li>同理 chrome 使用 <a href="chrome://net-internals/#dns">chrome:&#x2F;&#x2F;net-internals&#x2F;#dns</a> 来清空缓存</li>
+<li>mac 可使用 <code>sudo killall -HUP mDNSResponder</code> 刷新系统 hosts 解析</li>
+</ul>
+      </div>
+      <div class="post-meta">
+        <a class="post-read-more-link" href="/2023/09/10/%E5%85%B6%E4%BB%96/github%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE/">查看全文</a>
+      </div>
+    </article>
+    
+    <article class="post post-list-item">
+      <div class="post-title">
         <a class="post-title-link" href="/2023/08/31/mac%E4%BD%BF%E7%94%A8/mac%E5%A4%84%E7%90%86%E8%BD%AF%E4%BB%B6%E5%B7%B2%E6%8D%9F%E5%9D%8F/">
           mac 安装完打开提示软件损坏的处理方法
         </a>
@@ -210,7 +259,7 @@
     
     <article class="post post-list-item">
       <div class="post-title">
-        <a class="post-title-link" href="/2023/08/29/%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/react%20%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/">
+        <a class="post-title-link" href="/2023/08/29/%E4%BB%8E%E6%90%AD%E5%BB%BA%E5%88%B0%E4%B8%8A%E7%BA%BF/react%20%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/">
           react 项目搭建
         </a>
       </div>
@@ -224,25 +273,16 @@
 <li>使用 Prettier 格式化项目</li>
 <li>客户端路由 ReactRouter （Lazy Loading 方案）</li>
 <li>开发生产分离：devServer、HMR；treeShaking、css 压缩；多线程打包、外部 CDN 等等</li>
+<li>扩展<ol>
+<li>UI 库：ant-design</li>
+<li>状态管理 redux</li>
+<li>其他流行方案：CSS IN JS 的 styled-component、Tailwind CSS 等不赘述</li>
+</ol>
+</li>
 </ol>
       </div>
       <div class="post-meta">
-        <a class="post-read-more-link" href="/2023/08/29/%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/react%20%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/">查看全文</a>
-      </div>
-    </article>
-    
-    <article class="post post-list-item">
-      <div class="post-title">
-        <a class="post-title-link" href="/2023/08/29/%E5%85%B6%E4%BB%96/npm%E4%BE%9D%E8%B5%96%E5%8C%85%E7%89%88%E6%9C%AC%E9%94%81%E5%AE%9A/">
-          npm 依赖包版本锁定
-        </a>
-      </div>
-      <div class="post-content">
-        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>项目遇到第三方依赖升级到 <a href="mailto:&#x62;&#x61;&#x62;&#101;&#x6c;&#64;&#118;&#x37;&#46;&#x32;&#x30;">&#x62;&#x61;&#x62;&#101;&#x6c;&#64;&#118;&#x37;&#46;&#x32;&#x30;</a>，导致项目中的 generator 转义存在问题。</p>
-<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>同理某些依赖包升级与当前系统脚手架不兼容的情况，使用 <a href="mailto:&#110;&#x70;&#x6d;&#64;&#x76;&#x38;&#x2e;&#51;">&#110;&#x70;&#x6d;&#64;&#x76;&#x38;&#x2e;&#51;</a>+ 支持的 overrides 来锁定包版本，这样所有依赖树中对应的包都会限制为指定版本。</p>
-      </div>
-      <div class="post-meta">
-        <a class="post-read-more-link" href="/2023/08/29/%E5%85%B6%E4%BB%96/npm%E4%BE%9D%E8%B5%96%E5%8C%85%E7%89%88%E6%9C%AC%E9%94%81%E5%AE%9A/">查看全文</a>
+        <a class="post-read-more-link" href="/2023/08/29/%E4%BB%8E%E6%90%AD%E5%BB%BA%E5%88%B0%E4%B8%8A%E7%BA%BF/react%20%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/">查看全文</a>
       </div>
     </article>
     
@@ -280,56 +320,16 @@
     
     <article class="post post-list-item">
       <div class="post-title">
-        <a class="post-title-link" href="/2023/08/29/mac%E4%BD%BF%E7%94%A8/mac%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%88%AB%E5%90%8D%E8%AE%BE%E7%BD%AE/">
-          mac 命令行别名设置
+        <a class="post-title-link" href="/2023/08/29/%E5%85%B6%E4%BB%96/npm%E4%BE%9D%E8%B5%96%E5%8C%85%E7%89%88%E6%9C%AC%E9%94%81%E5%AE%9A/">
+          npm 依赖包版本锁定
         </a>
       </div>
       <div class="post-content">
-        <p>通过设置一些命令行别名来提升开发效率，比如：vscode 的 code 命令，结合别名，可以通过终端快速打开某个项目。</p>
-<p>默认 mac 终端为 bash 指令，操作步骤如下</p>
-<ol>
-<li>编辑 <code>~/.bash_profile</code> 增加 <code>alias blog=&quot;code ~/Documents/blog&quot;</code></li>
-<li>重启终端，或者执行 <code>source ~/.bash_profile</code> 使配置文件生效</li>
-<li>在终端输入 <code>blog</code> 即可在 vscode 打开对应的项目</li>
-</ol>
-<p>如果安装了 zsh，则需要修改 <code>~/.zshrc</code> 其他步骤及内容不变。</p>
+        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>项目遇到第三方依赖升级到 <a href="mailto:&#x62;&#x61;&#x62;&#x65;&#x6c;&#64;&#118;&#55;&#x2e;&#x32;&#x30;">&#x62;&#x61;&#x62;&#x65;&#x6c;&#64;&#118;&#55;&#x2e;&#x32;&#x30;</a>，导致项目中的 generator 转义存在问题。</p>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>同理某些依赖包升级与当前系统脚手架不兼容的情况，使用 <a href="mailto:&#110;&#112;&#x6d;&#64;&#x76;&#x38;&#x2e;&#x33;">&#110;&#112;&#x6d;&#64;&#x76;&#x38;&#x2e;&#x33;</a>+ 支持的 overrides 来锁定包版本，这样所有依赖树中对应的包都会限制为指定版本。</p>
       </div>
       <div class="post-meta">
-        <a class="post-read-more-link" href="/2023/08/29/mac%E4%BD%BF%E7%94%A8/mac%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%88%AB%E5%90%8D%E8%AE%BE%E7%BD%AE/">查看全文</a>
-      </div>
-    </article>
-    
-    <article class="post post-list-item">
-      <div class="post-title">
-        <a class="post-title-link" href="/2023/08/29/mac%E4%BD%BF%E7%94%A8/mac%E6%9D%80%E6%AD%BB%E6%9F%90%E4%B8%AA%E5%8D%A0%E7%94%A8%E7%AB%AF%E5%8F%A3%E7%9A%84%E8%BF%9B%E7%A8%8B/">
-          mac 杀死某个占用端口的进程
-        </a>
-      </div>
-      <div class="post-content">
-        <p>查看占用端口的进程：<code>lsof -i :端口号</code></p>
-<p>杀死指定进程：<code>kill -9 要杀死的进程ID</code></p>
-      </div>
-      <div class="post-meta">
-        <a class="post-read-more-link" href="/2023/08/29/mac%E4%BD%BF%E7%94%A8/mac%E6%9D%80%E6%AD%BB%E6%9F%90%E4%B8%AA%E5%8D%A0%E7%94%A8%E7%AB%AF%E5%8F%A3%E7%9A%84%E8%BF%9B%E7%A8%8B/">查看全文</a>
-      </div>
-    </article>
-    
-    <article class="post post-list-item">
-      <div class="post-title">
-        <a class="post-title-link" href="/2023/08/29/%E5%85%B6%E4%BB%96/Chrome%E6%B5%8F%E8%A7%88%E5%99%A8%E5%88%A4%E6%96%AD/">
-          判断用户环境/是否为 Chrome 浏览器
-        </a>
-      </div>
-      <div class="post-content">
-        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>toB 业务系统只打算兼容 Chrome，其他浏览器层出不穷的兼容问题不打算考虑。新版 Edge 和 Chrome 特性基本一致，所以不考虑细分判断 Edge 。</p>
-<h1 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h1><p>使用下述判断基本满足条件（PC 和 移动端的 Chrome&#x2F;Edge 访问）。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">isChrome = <span class="regexp">/Chrome/</span>.<span class="title function_">test</span>(navigator.<span class="property">userAgent</span>) || <span class="regexp">/CriOS/</span>.<span class="title function_">test</span>(navigator.<span class="property">userAgent</span>);</span><br></pre></td></tr></table></figure>
-
-<p>示例页面：<a href="https://zzyxka.github.io/pages/browser-ua/index.html">https://zzyxka.github.io/pages/browser-ua/index.html</a></p>
-<p><code>CriOS</code> 主要是为了判断 IOS 移动端 Chrome，原计划是通过 <code>window.chrome</code> 来判断，但经过测试发现，IOS 下的 Chrome，既没有 <code>window.chrome</code> 对象，又没有 包含 <code>Chrome</code> 的 userAgent。</p>
-      </div>
-      <div class="post-meta">
-        <a class="post-read-more-link" href="/2023/08/29/%E5%85%B6%E4%BB%96/Chrome%E6%B5%8F%E8%A7%88%E5%99%A8%E5%88%A4%E6%96%AD/">查看全文</a>
+        <a class="post-read-more-link" href="/2023/08/29/%E5%85%B6%E4%BB%96/npm%E4%BE%9D%E8%B5%96%E5%8C%85%E7%89%88%E6%9C%AC%E9%94%81%E5%AE%9A/">查看全文</a>
       </div>
     </article>
     
