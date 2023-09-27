@@ -27,7 +27,7 @@
   <div class="notice">
     <h3>Notice</h3>
     <p>
-      网站中图片存储在 github，如遇图片裂开，参考 <a href="https://zzyxka.github.io/2022/11/26/github-address/">github相关网址打不开的解决办法</a>
+      网站中图片存储在 github，如遇图片裂开，参考 <a href="https://zzyxka.github.io/2023/09/10/%E5%85%B6%E4%BB%96/github%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE/">github相关网址打不开的解决办法</a>
     </p>
   </div>
   
@@ -125,6 +125,48 @@
     
     <article class="post post-list-item">
       <div class="post-title">
+        <a class="post-title-link" href="/2023/09/22/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/electron%E7%AC%94%E8%AE%B0/">
+          Electron 笔记
+        </a>
+      </div>
+      <div class="post-content">
+        <p>过去在工作中因需要，匆忙给政企部门封装过一个 Electron 客户端应用，整个过程非常“敏捷“，印象中有很多版本方面的差异和兼容问题，但没有总结，这里对着官网整个基础 mac 应用，学习整理下各方面功能实现及 API 调用。</p>
+<p>官网：<a target="_blank" rel="noopener" href="https://www.electronjs.org/">https://www.electronjs.org/</a></p>
+<p>本文完成 DEMO : <a target="_blank" rel="noopener" href="https://github.sheincorp.cn/zzyxka/electron-demo-app">https://github.sheincorp.cn/zzyxka/electron-demo-app</a></p>
+<p>注：本文以 mac 平台为准，其他平台可能需要增加“补丁”类模板代码。</p>
+<p><img src="https://raw.githubusercontent.com/zzyxka/images/main/20230927172923.png" alt="概述"></p>
+      </div>
+      <div class="post-meta">
+        <a class="post-read-more-link" href="/2023/09/22/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/electron%E7%AC%94%E8%AE%B0/">查看全文</a>
+      </div>
+    </article>
+    
+    <article class="post post-list-item">
+      <div class="post-title">
+        <a class="post-title-link" href="/2023/09/21/%E5%89%8D%E7%AB%AF%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/Electron%E5%9B%A2%E9%98%9F%E5%B7%A5%E4%BD%9C%E6%8F%90%E9%86%92%E5%B7%A5%E5%85%B7/">
+          基于 Electron 的团队任务提醒工具
+        </a>
+      </div>
+      <div class="post-content">
+        <p>日常工作线上化后，很多时候需要自动化给团队的同学推送消息。基本上会采用企微机器人的方式，但公司企微机器人服务因为撑不住，故不给非业务诉求使用了，只能退而求其次，想到使用 node-mail 来发邮件，但腾讯企业邮箱又有发信限制，其他没有发信限制的邮箱又不够安全合规。最终有了用 Electron 做一个桌面工具给团队同学安装使用的想法，后台(软件最小化)获取 websocket 消息推送，借助 Electron 能力，弹出 mac 消息提示。</p>
+<p>举例一个实际的场景：系统发版申请，现有一个 web 页面，用来填写发版申请单，填写完成后推送提醒给发版执行人</p>
+<p>核心处理：</p>
+<ol>
+<li>websocket 服务：使用 Node 提供 websocket 服务，web 系统完成消息交互测试</li>
+<li>Eleectron 应用搭建：<ol>
+<li>使用 Electron 加载 web 系统，登录后传入 用户ID 连接 socket</li>
+<li>使用 Electron 中 Node 线程获取 sokcket 消息并弹出提醒</li>
+</ol>
+</li>
+</ol>
+      </div>
+      <div class="post-meta">
+        <a class="post-read-more-link" href="/2023/09/21/%E5%89%8D%E7%AB%AF%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/Electron%E5%9B%A2%E9%98%9F%E5%B7%A5%E4%BD%9C%E6%8F%90%E9%86%92%E5%B7%A5%E5%85%B7/">查看全文</a>
+      </div>
+    </article>
+    
+    <article class="post post-list-item">
+      <div class="post-title">
         <a class="post-title-link" href="/2023/09/18/%E4%BB%8E%E6%90%AD%E5%BB%BA%E5%88%B0%E4%B8%8A%E7%BA%BF/%E7%BC%96%E5%86%99%20webpack-plugin/">
           编写 webpack-plugin
         </a>
@@ -169,6 +211,20 @@
       </div>
       <div class="post-meta">
         <a class="post-read-more-link" href="/2023/09/10/%E5%85%B6%E4%BB%96/github%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE/">查看全文</a>
+      </div>
+    </article>
+    
+    <article class="post post-list-item">
+      <div class="post-title">
+        <a class="post-title-link" href="/2023/08/31/%E4%BB%8E%E6%90%AD%E5%BB%BA%E5%88%B0%E4%B8%8A%E7%BA%BF/%E5%89%8D%E7%AB%AF%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2%E6%8E%A2%E7%B4%A2/">
+          前端自动化部署探索
+        </a>
+      </div>
+      <div class="post-content">
+        
+      </div>
+      <div class="post-meta">
+        <a class="post-read-more-link" href="/2023/08/31/%E4%BB%8E%E6%90%AD%E5%BB%BA%E5%88%B0%E4%B8%8A%E7%BA%BF/%E5%89%8D%E7%AB%AF%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2%E6%8E%A2%E7%B4%A2/">查看全文</a>
       </div>
     </article>
     
@@ -254,82 +310,6 @@
       </div>
       <div class="post-meta">
         <a class="post-read-more-link" href="/2023/08/30/%E5%89%8D%E7%AB%AF%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/%E5%AE%9E%E7%8E%B0%E6%96%B0%E7%89%88%E6%9C%AC%E5%8F%91%E5%B8%83%E6%8F%90%E7%A4%BA/">查看全文</a>
-      </div>
-    </article>
-    
-    <article class="post post-list-item">
-      <div class="post-title">
-        <a class="post-title-link" href="/2023/08/29/%E4%BB%8E%E6%90%AD%E5%BB%BA%E5%88%B0%E4%B8%8A%E7%BA%BF/react%20%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/">
-          react 项目搭建
-        </a>
-      </div>
-      <div class="post-content">
-        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><ol>
-<li>创建项目：包管理、镜像源</li>
-<li><code>webpack</code> 打包配置：基础打包配置文件、使用 plugin 处理 html</li>
-<li>在项目中使用 CSS：CSS Module, postCSS, 分离打包CSS</li>
-<li>在项目中使用 React 和 TS - Babel</li>
-<li>规范编码 Lint - ESLint, StyleLint</li>
-<li>使用 Prettier 格式化项目</li>
-<li>客户端路由 ReactRouter （Lazy Loading 方案）</li>
-<li>开发生产分离：devServer、HMR；treeShaking、css 压缩；多线程打包、外部 CDN 等等</li>
-<li>扩展<ol>
-<li>UI 库：ant-design</li>
-<li>状态管理 redux</li>
-<li>其他流行方案：CSS IN JS 的 styled-component、Tailwind CSS 等不赘述</li>
-</ol>
-</li>
-</ol>
-      </div>
-      <div class="post-meta">
-        <a class="post-read-more-link" href="/2023/08/29/%E4%BB%8E%E6%90%AD%E5%BB%BA%E5%88%B0%E4%B8%8A%E7%BA%BF/react%20%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/">查看全文</a>
-      </div>
-    </article>
-    
-    <article class="post post-list-item">
-      <div class="post-title">
-        <a class="post-title-link" href="/2023/08/29/%E5%85%B6%E4%BB%96/npm%E4%BE%9D%E8%B5%96%E5%8C%85%E7%89%88%E6%9C%AC%E9%94%81%E5%AE%9A/">
-          npm 依赖包版本锁定
-        </a>
-      </div>
-      <div class="post-content">
-        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>项目遇到第三方依赖升级到 <a href="mailto:&#x62;&#97;&#98;&#x65;&#108;&#x40;&#x76;&#55;&#46;&#x32;&#48;">&#x62;&#97;&#98;&#x65;&#108;&#x40;&#x76;&#55;&#46;&#x32;&#48;</a>，导致项目中的 generator 转义存在问题。</p>
-<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>同理某些依赖包升级与当前系统脚手架不兼容的情况，使用 <a href="mailto:&#x6e;&#112;&#x6d;&#x40;&#x76;&#56;&#x2e;&#51;">&#x6e;&#112;&#x6d;&#x40;&#x76;&#56;&#x2e;&#51;</a>+ 支持的 overrides 来锁定包版本，这样所有依赖树中对应的包都会限制为指定版本。</p>
-      </div>
-      <div class="post-meta">
-        <a class="post-read-more-link" href="/2023/08/29/%E5%85%B6%E4%BB%96/npm%E4%BE%9D%E8%B5%96%E5%8C%85%E7%89%88%E6%9C%AC%E9%94%81%E5%AE%9A/">查看全文</a>
-      </div>
-    </article>
-    
-    <article class="post post-list-item">
-      <div class="post-title">
-        <a class="post-title-link" href="/2023/08/29/%E5%85%B6%E4%BB%96/%E5%86%99%E4%B8%AAhexo%E4%B8%BB%E9%A2%98/">
-          写个 hexo 主题
-        </a>
-      </div>
-      <div class="post-content">
-        <p>尝试自己写个 hexo 的主题 themes&#x2F;baozi，想了解一下实现过程。</p>
-<p>目前已经发布到了 hexo.theme 搜索 baozi 可以查看并使用。</p>
-<p>完成了以下几项内容，整体完成下来对前端开发者来说还是比较简单的。</p>
-<ul>
-<li><input checked="" disabled="" type="checkbox"> <strong>首页</strong> 展示&#x2F;文章列表分页&#x2F;回到顶部按钮</li>
-<li><input checked="" disabled="" type="checkbox"> <strong>文章页</strong> 展示&#x2F;阅读大纲(TOC)&#x2F;回到顶部按钮</li>
-<li><input checked="" disabled="" type="checkbox"> <strong>关于我页</strong> 展示个人信息&#x2F;简历</li>
-<li><input checked="" disabled="" type="checkbox"> <strong>其他</strong> 文章搜索&#x2F;样式处理(移动端兼容)</li>
-<li><input checked="" disabled="" type="checkbox"> <strong>分类</strong> 为文章设置所属分类&#x2F;组，跳转到分类列表页</li>
-</ul>
-<p>主题源码地址：<a target="_blank" rel="noopener" href="https://github.com/zzyxka/baozi">https://github.com/zzyxka/baozi</a></p>
-<p>预览：<a href="https://zzyxka.github.io/">https://zzyxka.github.io</a></p>
-<p>参考：</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1440353">https://cloud.tencent.com/developer/article/1440353</a></li>
-<li><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1624646">https://cloud.tencent.com/developer/article/1624646</a></li>
-<li><a target="_blank" rel="noopener" href="https://guangchuangyu.github.io/">https://guangchuangyu.github.io/</a></li>
-</ul>
-<p>注：许多样式从原文复制粘贴而来、代码块颜色取自于 One Monokai 配色，非商用，若侵犯权益，请联系我整改。</p>
-      </div>
-      <div class="post-meta">
-        <a class="post-read-more-link" href="/2023/08/29/%E5%85%B6%E4%BB%96/%E5%86%99%E4%B8%AAhexo%E4%B8%BB%E9%A2%98/">查看全文</a>
       </div>
     </article>
     

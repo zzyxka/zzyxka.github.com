@@ -27,7 +27,7 @@
   <div class="notice">
     <h3>Notice</h3>
     <p>
-      网站中图片存储在 github，如遇图片裂开，参考 <a href="https://zzyxka.github.io/2022/11/26/github-address/">github相关网址打不开的解决办法</a>
+      网站中图片存储在 github，如遇图片裂开，参考 <a href="https://zzyxka.github.io/2023/09/10/%E5%85%B6%E4%BB%96/github%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE/">github相关网址打不开的解决办法</a>
     </p>
   </div>
   
@@ -122,6 +122,83 @@
 
 </section>
   <section class="index-container">
+    
+    <article class="post post-list-item">
+      <div class="post-title">
+        <a class="post-title-link" href="/2023/08/29/%E4%BB%8E%E6%90%AD%E5%BB%BA%E5%88%B0%E4%B8%8A%E7%BA%BF/react%20%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/">
+          react 项目搭建
+        </a>
+      </div>
+      <div class="post-content">
+        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>示例项目地址：<a target="_blank" rel="noopener" href="https://github.com/zzyxka/fizzy-react">https://github.com/zzyxka/fizzy-react</a></p>
+<ol>
+<li>创建项目：包管理、镜像源</li>
+<li><code>webpack</code> 打包配置：基础打包配置文件、使用 plugin 处理 html</li>
+<li>在项目中使用 CSS：CSS Module, postCSS, 分离打包CSS</li>
+<li>在项目中使用 React 和 TS - Babel</li>
+<li>规范编码 Lint - ESLint, StyleLint</li>
+<li>使用 Prettier 格式化项目</li>
+<li>客户端路由 ReactRouter （Lazy Loading 方案）</li>
+<li>开发生产分离：devServer、HMR；treeShaking、css 压缩；多线程打包、外部 CDN 等等</li>
+<li>扩展<ol>
+<li>UI 库：ant-design</li>
+<li>状态管理 redux</li>
+<li>其他流行方案：CSS IN JS 的 styled-component、Tailwind CSS 等不赘述</li>
+</ol>
+</li>
+</ol>
+      </div>
+      <div class="post-meta">
+        <a class="post-read-more-link" href="/2023/08/29/%E4%BB%8E%E6%90%AD%E5%BB%BA%E5%88%B0%E4%B8%8A%E7%BA%BF/react%20%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/">查看全文</a>
+      </div>
+    </article>
+    
+    <article class="post post-list-item">
+      <div class="post-title">
+        <a class="post-title-link" href="/2023/08/29/%E5%85%B6%E4%BB%96/npm%E4%BE%9D%E8%B5%96%E5%8C%85%E7%89%88%E6%9C%AC%E9%94%81%E5%AE%9A/">
+          npm 依赖包版本锁定
+        </a>
+      </div>
+      <div class="post-content">
+        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>项目遇到第三方依赖升级到 <a href="mailto:&#98;&#x61;&#98;&#101;&#108;&#64;&#x76;&#x37;&#46;&#x32;&#48;">&#98;&#x61;&#98;&#101;&#108;&#64;&#x76;&#x37;&#46;&#x32;&#48;</a>，导致项目中的 generator 转义存在问题。</p>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>同理某些依赖包升级与当前系统脚手架不兼容的情况，使用 <a href="mailto:&#110;&#x70;&#109;&#64;&#x76;&#x38;&#x2e;&#51;">&#110;&#x70;&#109;&#64;&#x76;&#x38;&#x2e;&#51;</a>+ 支持的 overrides 来锁定包版本，这样所有依赖树中对应的包都会限制为指定版本。</p>
+      </div>
+      <div class="post-meta">
+        <a class="post-read-more-link" href="/2023/08/29/%E5%85%B6%E4%BB%96/npm%E4%BE%9D%E8%B5%96%E5%8C%85%E7%89%88%E6%9C%AC%E9%94%81%E5%AE%9A/">查看全文</a>
+      </div>
+    </article>
+    
+    <article class="post post-list-item">
+      <div class="post-title">
+        <a class="post-title-link" href="/2023/08/29/%E5%85%B6%E4%BB%96/%E5%86%99%E4%B8%AAhexo%E4%B8%BB%E9%A2%98/">
+          写个 hexo 主题
+        </a>
+      </div>
+      <div class="post-content">
+        <p>尝试自己写个 hexo 的主题 themes&#x2F;baozi，想了解一下实现过程。</p>
+<p>目前已经发布到了 hexo.theme 搜索 baozi 可以查看并使用。</p>
+<p>完成了以下几项内容，整体完成下来对前端开发者来说还是比较简单的。</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> <strong>首页</strong> 展示&#x2F;文章列表分页&#x2F;回到顶部按钮</li>
+<li><input checked="" disabled="" type="checkbox"> <strong>文章页</strong> 展示&#x2F;阅读大纲(TOC)&#x2F;回到顶部按钮</li>
+<li><input checked="" disabled="" type="checkbox"> <strong>关于我页</strong> 展示个人信息&#x2F;简历</li>
+<li><input checked="" disabled="" type="checkbox"> <strong>其他</strong> 文章搜索&#x2F;样式处理(移动端兼容)</li>
+<li><input checked="" disabled="" type="checkbox"> <strong>分类</strong> 为文章设置所属分类&#x2F;组，跳转到分类列表页</li>
+</ul>
+<p>主题源码地址：<a target="_blank" rel="noopener" href="https://github.com/zzyxka/baozi">https://github.com/zzyxka/baozi</a></p>
+<p>预览：<a href="https://zzyxka.github.io/">https://zzyxka.github.io</a></p>
+<p>参考：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1440353">https://cloud.tencent.com/developer/article/1440353</a></li>
+<li><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1624646">https://cloud.tencent.com/developer/article/1624646</a></li>
+<li><a target="_blank" rel="noopener" href="https://guangchuangyu.github.io/">https://guangchuangyu.github.io/</a></li>
+</ul>
+<p>注：许多样式从原文复制粘贴而来、代码块颜色取自于 One Monokai 配色，非商用，若侵犯权益，请联系我整改。</p>
+      </div>
+      <div class="post-meta">
+        <a class="post-read-more-link" href="/2023/08/29/%E5%85%B6%E4%BB%96/%E5%86%99%E4%B8%AAhexo%E4%B8%BB%E9%A2%98/">查看全文</a>
+      </div>
+    </article>
     
     <article class="post post-list-item">
       <div class="post-title">
