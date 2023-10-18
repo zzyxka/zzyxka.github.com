@@ -132,7 +132,7 @@
       <div class="post-content">
         <p>过去在工作中因需要，匆忙给政企部门封装过一个 Electron 客户端应用，整个过程非常“敏捷“，印象中有很多版本方面的差异和兼容问题，但没有总结，这里对着官网整个基础 mac 应用，学习整理下各方面功能实现及 API 调用。</p>
 <p>官网：<a target="_blank" rel="noopener" href="https://www.electronjs.org/">https://www.electronjs.org/</a></p>
-<p>本文完成 DEMO : <a target="_blank" rel="noopener" href="https://github.sheincorp.cn/zzyxka/electron-demo-app">https://github.sheincorp.cn/zzyxka/electron-demo-app</a></p>
+<p>本文完成 DEMO : <a target="_blank" rel="noopener" href="https://github.com/zzyxka/electron-demo-app">https://github.com/zzyxka/electron-demo-app</a></p>
 <p>注：本文以 mac 平台为准，其他平台可能需要增加“补丁”类模板代码。</p>
 <p><img src="https://raw.githubusercontent.com/zzyxka/images/main/20230927172923.png" alt="概述"></p>
       </div>
@@ -152,7 +152,7 @@
 <p>举例一个实际的场景：系统发版申请，现有一个 web 页面，用来填写发版申请单，填写完成后推送提醒给发版执行人</p>
 <p>核心处理：</p>
 <ol>
-<li>websocket 服务：使用 Node 提供 websocket 服务，web 系统完成消息交互测试</li>
+<li>websocket 服务：使用 Node 提供 websocket 服务，web 系统&#x2F; node 服务 完成消息交互测试</li>
 <li>Eleectron 应用搭建：<ol>
 <li>使用 Electron 加载 web 系统，登录后传入 用户ID 连接 socket</li>
 <li>使用 Electron 中 Node 线程获取 sokcket 消息并弹出提醒</li>
