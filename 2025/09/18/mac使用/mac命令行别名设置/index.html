@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <title>Fizzy Zhang</title>
+  <link rel="shortcut icon" href="/images/favicon.ico"> 
+<link rel="stylesheet" href="/css/style.css">
+ 
+<script src="/js/jquery.js"></script>
+ 
+<script src="/js/search.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <article class="article-container">
+  <section class="header-container">
+  <a class="header-title" href="/">
+    <svg t="1693387181307" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4053" width="20" height="20">
+      <path d="M946.5 505L560.1 118.8l-25.9-25.9c-12.3-12.2-32.1-12.2-44.4 0L77.5 505c-12.3 12.3-18.9 28.6-18.8 46 0.4 35.2 29.7 63.3 64.9 63.3h42.5V940h691.8V614.3h43.4c17.1 0 33.2-6.7 45.3-18.8 12.1-12.1 18.7-28.2 18.7-45.3 0-17-6.7-33.1-18.8-45.2zM568 868H456V664h112v204z m217.9-325.7V868H632V640c0-22.1-17.9-40-40-40H432c-22.1 0-40 17.9-40 40v228H238.1V542.3h-96l370-369.7 23.1 23.1L882 542.3h-96.1z" p-id="4054" fill="#515151"></path>
+    </svg>
+    <span>Fizzy Zhang</span>
+  </a>
+</section>
+  <section class="article-body">
+    <div class="post-toc">
+      <h3>本文目录</h3>
+      
+    </div>
+    <div class="post-container">
+      <div class="post-title">
+        <h2 class="title">
+          mac 命令行别名设置
+        </h2>
+      </div>
+      <div class="post-meta">
+      </div>
+      <div class="post-content">
+        <p>通过设置一些命令行别名来提升开发效率，比如：vscode 的 code 命令，结合别名，可以通过终端快速打开某个项目。</p>
+<p>默认 mac 终端为 bash 指令，操作步骤如下</p>
+<ol>
+<li>编辑 <code>~/.bash_profile</code> 增加 <code>alias blog=&quot;code ~/Documents/blog&quot;</code></li>
+<li>重启终端，或者执行 <code>source ~/.bash_profile</code> 使配置文件生效</li>
+<li>在终端输入 <code>blog</code> 即可在 vscode 打开对应的项目</li>
+</ol>
+<p>如果安装了 zsh，则需要修改 <code>~/.zshrc</code> 其他步骤及内容不变。</p>
+<span id="more"></span>
+
+<p>安装 vscode 的 code 命令：在 vscode 下 F1 后，输入 <code>install code</code>，回车。<br><img src="https://raw.githubusercontent.com/zzyxka/images/main/2023-03-22-19-53-32.png" alt="2023-03-22-19-53-32"></p>
+<p>最终效果<br><img src="https://raw.githubusercontent.com/zzyxka/images/main/2023-03-22-19-52-22.gif" alt="2023-03-22-19-52-22"></p>
+
+      </div>
+    </div>
+  </section>
+</article>
+<!-- go-top -->
+<a id="goTop" class="go-top" type="button">
+  <svg t="1693380723883" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3999" width="20" height="20">
+    <path d="M825.568 555.328l-287.392-289.28C531.808 259.648 523.488 256.576 515.2 256.64 514.08 256.544 513.12 256 512 256c-4.672 0-9.024 1.088-13.024 2.88-4.032 1.536-7.872 3.872-11.136 7.136l-259.328 258.88c-12.512 12.48-12.544 32.736-0.032 45.248 6.24 6.272 14.432 9.408 22.656 9.408 8.192 0 16.352-3.136 22.624-9.344L480 364.288 480 928c0 17.696 14.336 32 32 32s32-14.304 32-32L544 362.72l236.192 237.728c6.24 6.272 14.496 9.44 22.688 9.44s16.32-3.104 22.56-9.312C838.016 588.128 838.048 567.84 825.568 555.328zM864 192 160 192C142.336 192 128 177.664 128 160s14.336-32 32-32l704 0c17.696 0 32 14.336 32 32S881.696 192 864 192z" fill="#ffffff" p-id="4000"></path>
+  </svg>
+</a>
+<script>
+  goTop.addEventListener('click', function(e) {
+    document.querySelector('.post-container').scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  });
+</script>
+</body>
+
+</html>

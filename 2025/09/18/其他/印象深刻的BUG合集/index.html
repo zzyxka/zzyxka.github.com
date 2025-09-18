@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <title>Fizzy Zhang</title>
+  <link rel="shortcut icon" href="/images/favicon.ico"> 
+<link rel="stylesheet" href="/css/style.css">
+ 
+<script src="/js/jquery.js"></script>
+ 
+<script src="/js/search.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <article class="article-container">
+  <section class="header-container">
+  <a class="header-title" href="/">
+    <svg t="1693387181307" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4053" width="20" height="20">
+      <path d="M946.5 505L560.1 118.8l-25.9-25.9c-12.3-12.2-32.1-12.2-44.4 0L77.5 505c-12.3 12.3-18.9 28.6-18.8 46 0.4 35.2 29.7 63.3 64.9 63.3h42.5V940h691.8V614.3h43.4c17.1 0 33.2-6.7 45.3-18.8 12.1-12.1 18.7-28.2 18.7-45.3 0-17-6.7-33.1-18.8-45.2zM568 868H456V664h112v204z m217.9-325.7V868H632V640c0-22.1-17.9-40-40-40H432c-22.1 0-40 17.9-40 40v228H238.1V542.3h-96l370-369.7 23.1 23.1L882 542.3h-96.1z" p-id="4054" fill="#515151"></path>
+    </svg>
+    <span>Fizzy Zhang</span>
+  </a>
+</section>
+  <section class="article-body">
+    <div class="post-toc">
+      <h3>本文目录</h3>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%95%E5%8F%91%E7%B1%BB"><span class="toc-text">一、第三方引发类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-WPS"><span class="toc-text">1.1 WPS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BE%E5%89%8D%E7%AB%AFSDK"><span class="toc-text">1.2 高德地图前端SDK</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-%E8%85%BE%E8%AE%AF%E5%9C%B0%E5%9B%BE%E5%89%8D%E7%AB%AFSDK"><span class="toc-text">1.3 腾讯地图前端SDK</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E7%B1%BB"><span class="toc-text">性能类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-out-of-memory"><span class="toc-text">2.1 out of memory</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E8%AE%A1%E7%AE%97%E5%AF%BC%E8%87%B4%E6%B8%B2%E6%9F%93%E8%BF%9B%E7%A8%8B%E5%8D%A1%E6%AD%BB"><span class="toc-text">2.2 计算导致渲染进程卡死</span></a></li></ol></li></ol>
+    </div>
+    <div class="post-container">
+      <div class="post-title">
+        <h2 class="title">
+          印象深刻的BUG合集
+        </h2>
+      </div>
+      <div class="post-meta">
+      </div>
+      <div class="post-content">
+        <h1 id="一、第三方引发类"><a href="#一、第三方引发类" class="headerlink" title="一、第三方引发类"></a>一、第三方引发类</h1><h2 id="1-1-WPS"><a href="#1-1-WPS" class="headerlink" title="1.1 WPS"></a>1.1 WPS</h2><p>2023-12-01</p>
+<p>事件描述：页面上的 a 标签，用户复制粘贴到 wps excel 单元格中，此时编辑超链接可以看到，hash 值被复制了一份</p>
+<p>复现步骤：</p>
+<ol>
+<li>F12 往页面上写个标签 <code>document.write(&#39;&lt;a href=&quot;https://baidu.com/#/abc?a=1&quot;&gt;我是百度&lt;/a&gt;&#39;)</code></li>
+<li>复制页面上的标签到 wps excel 单元格中</li>
+<li>编辑单元格超链接</li>
+</ol>
+<p>教训总结：用户在点击单元格超链接时，前端截取方法处理不当，引发多个重复参数。</p>
+<p>题外话：有时看到开发同学编码没来由的在去重，或者做一些奇怪的兜底，可能不是我方代码不行，而是第三方的神迹。</p>
+<video controls crossorigin width="900">
+    <source src="https://raw.githubusercontent.com/zzyxka/images/main/WPS%E8%B6%85%E9%93%BE%E6%8E%A5BUG.mov" />
+</video>
+
+<h2 id="1-2-高德地图前端SDK"><a href="#1-2-高德地图前端SDK" class="headerlink" title="1.2 高德地图前端SDK"></a>1.2 高德地图前端SDK</h2><p>2021-12-23 17:40 切身经历，没有高德事故报告，无从考究</p>
+<p>事件描述：前端初始化高德地图异常，页面没剩啥功能可操作，amap 提供的定位获取失效，无法完成业务作业-打卡等各个流程</p>
+<p>排查得出高德 CDN 返回的 JS，格式化后，比平时多了15行。约 25 分钟后恢复正常。</p>
+<p>教训总结：</p>
+<ol>
+<li>第三方依赖尽量本地化（大部分情况下，这种做法是OK的，不排除极端情况，如：API变更）</li>
+<li>兜底&#x2F;降级方案，比如该场景下的定位、自动降级切换地图等等</li>
+</ol>
+<h2 id="1-3-腾讯地图前端SDK"><a href="#1-3-腾讯地图前端SDK" class="headerlink" title="1.3 腾讯地图前端SDK"></a>1.3 腾讯地图前端SDK</h2><p>2023-08-07 14:45 同事分享，没有实质证据，无从考究</p>
+<p>事件描述：腾讯地图 CDN 凉凉，无法加载，同事的 SPA 系统在模板 html 中 script 同步加载了该资源，导致白屏 2min 才能进去系统（2min 后 js fetch fail）</p>
+<p>教训总结：</p>
+<ol>
+<li>第三方依赖尽量本地化（大部分情况下，这种做法是OK的，不排除极端情况，如：API变更）</li>
+<li>不能本地化别同步加载，在用到的页面异步添加 script load</li>
+<li>兜底&#x2F;降级方案，比如该场景下的定位、自动降级切换地图等等</li>
+</ol>
+<h1 id="性能类"><a href="#性能类" class="headerlink" title="性能类"></a>性能类</h1><h2 id="2-1-out-of-memory"><a href="#2-1-out-of-memory" class="headerlink" title="2.1 out of memory"></a>2.1 out of memory</h2><p>事件描述：Table场景，行是懒加载，然而是动态列，忽然业务侧爆发了新场景，5000+列，初始化渲染导致内存泄漏</p>
+<p>教训总结：</p>
+<ol>
+<li>想办法懒加载</li>
+<li>不能懒加载的时候，从产品方案设置渲染上限</li>
+</ol>
+<h2 id="2-2-计算导致渲染进程卡死"><a href="#2-2-计算导致渲染进程卡死" class="headerlink" title="2.2 计算导致渲染进程卡死"></a>2.2 计算导致渲染进程卡死</h2><p>事件描述：两个下拉具备关联关系，比如一个送礼页面，礼物下拉筛选有 品类 和 品类下的实体礼物。这里前端同学答应了产品和后端的无理请求，从后端拿了所有的品类和实体枚举项，刚进页面&#x2F;没选品类的时候要加载所有品类下的实体下拉项。开发顺利，上线进入页面先卡 8s 后，才能正常操作。</p>
+<p>教训总结：</p>
+<ol>
+<li>质疑产品方案的合理性，产品所谓的用户体验，有时就是YY出来的交互，也不是用户需要的东西</li>
+<li>质疑后端方案的合理性，为啥不动态搜索，灵活拆接口</li>
+<li>纯计算可以放 web-worker，异步，不会阻塞渲染。比如这里就让这两个下拉去 loading，其他操作正常用</li>
+<li>做压测</li>
+</ol>
+<span id="more"></span>
+      </div>
+    </div>
+  </section>
+</article>
+<!-- go-top -->
+<a id="goTop" class="go-top" type="button">
+  <svg t="1693380723883" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3999" width="20" height="20">
+    <path d="M825.568 555.328l-287.392-289.28C531.808 259.648 523.488 256.576 515.2 256.64 514.08 256.544 513.12 256 512 256c-4.672 0-9.024 1.088-13.024 2.88-4.032 1.536-7.872 3.872-11.136 7.136l-259.328 258.88c-12.512 12.48-12.544 32.736-0.032 45.248 6.24 6.272 14.432 9.408 22.656 9.408 8.192 0 16.352-3.136 22.624-9.344L480 364.288 480 928c0 17.696 14.336 32 32 32s32-14.304 32-32L544 362.72l236.192 237.728c6.24 6.272 14.496 9.44 22.688 9.44s16.32-3.104 22.56-9.312C838.016 588.128 838.048 567.84 825.568 555.328zM864 192 160 192C142.336 192 128 177.664 128 160s14.336-32 32-32l704 0c17.696 0 32 14.336 32 32S881.696 192 864 192z" fill="#ffffff" p-id="4000"></path>
+  </svg>
+</a>
+<script>
+  goTop.addEventListener('click', function(e) {
+    document.querySelector('.post-container').scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  });
+</script>
+</body>
+
+</html>

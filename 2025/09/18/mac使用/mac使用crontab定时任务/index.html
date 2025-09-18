@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <title>Fizzy Zhang</title>
+  <link rel="shortcut icon" href="/images/favicon.ico"> 
+<link rel="stylesheet" href="/css/style.css">
+ 
+<script src="/js/jquery.js"></script>
+ 
+<script src="/js/search.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <article class="article-container">
+  <section class="header-container">
+  <a class="header-title" href="/">
+    <svg t="1693387181307" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4053" width="20" height="20">
+      <path d="M946.5 505L560.1 118.8l-25.9-25.9c-12.3-12.2-32.1-12.2-44.4 0L77.5 505c-12.3 12.3-18.9 28.6-18.8 46 0.4 35.2 29.7 63.3 64.9 63.3h42.5V940h691.8V614.3h43.4c17.1 0 33.2-6.7 45.3-18.8 12.1-12.1 18.7-28.2 18.7-45.3 0-17-6.7-33.1-18.8-45.2zM568 868H456V664h112v204z m217.9-325.7V868H632V640c0-22.1-17.9-40-40-40H432c-22.1 0-40 17.9-40 40v228H238.1V542.3h-96l370-369.7 23.1 23.1L882 542.3h-96.1z" p-id="4054" fill="#515151"></path>
+    </svg>
+    <span>Fizzy Zhang</span>
+  </a>
+</section>
+  <section class="article-body">
+    <div class="post-toc">
+      <h3>本文目录</h3>
+      
+    </div>
+    <div class="post-container">
+      <div class="post-title">
+        <h2 class="title">
+          mac使用crontab定时任务
+        </h2>
+      </div>
+      <div class="post-meta">
+      </div>
+      <div class="post-content">
+        <p>Crontab 是 cron table 的缩写，字面意思<strong>日程表</strong>。可以使用 crontab 指令，按照指定的规则&#x2F;周期定时执行某项任务。</p>
+<p>常用指令：</p>
+<ul>
+<li><code>crontab -l</code> 列出目前的时程表(无日程时，执行打印 <code>crontab: no crontab for xxx</code>)</li>
+<li><code>crontab -e</code> 新建一个日程，执行后打开 vim，需要按照指定规则编写并保存(:wq)</li>
+<li><code>crontab -r</code> 删除目前的日程表(执行成功后没有内容打印)</li>
+</ul>
+<p>编写日程的规则：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">*    *    *    *    *</span><br><span class="line">-    -    -    -    -</span><br><span class="line">|    |    |    |    |</span><br><span class="line">|    |    |    |    +----- 星期中星期几 (0 - 6) (星期天 为0)</span><br><span class="line">|    |    |    +---------- 月份 (1 - 12)</span><br><span class="line">|    |    +--------------- 一个月中的第几天 (1 - 31)</span><br><span class="line">|    +-------------------- 小时 (0 - 23)</span><br><span class="line">+------------------------- 分钟 (0 - 59)</span><br></pre></td></tr></table></figure>
+
+<p>举例：每天 19:45 执行 <a target="_blank" rel="noopener" href="http://auto-task.sh/">auto-task.sh</a> 脚本中的 git 命令，来保存提交 Note目录 下的笔记。</p>
+<span id="more"></span>
+
+<ol>
+<li>在 <code>~</code> 目录，即用户目录(&#x2F;Users&#x2F;xxx) 下创建 <a target="_blank" rel="noopener" href="http://auto-task.sh/">auto-task.sh</a></li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># /Users/xxx/auto-task.sh</span></span><br><span class="line"><span class="built_in">cd</span> ~/Note</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;update&quot;</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>执行 <code>crontab -e</code>，输入下述内容并 :wq 保存</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">45 19 * * * /bin/bash /Users/xxx/auto-task.sh</span><br></pre></td></tr></table></figure>
+
+<p>需要注意，执行文件路径必须是绝对路径。</p>
+<ol>
+<li>执行 <code>crontab -l</code> 查看当前日程，可以看到已经加入上述任务。</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; crontab -l</span><br><span class="line">&gt; 45 19 * * * /bin/bash /Users/10008678/auto-task.sh</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>更多指令参考：<a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-crontab.html">https://www.runoob.com/linux/linux-comm-crontab.html</a></p>
+</blockquote>
+<p>[Tips]</p>
+<p>到了指定时间命令执行后，在 mac 命令行上出现 <code>You have new mail.</code>，可以通过 <code>mail</code> 命令查看执行结果。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看 mail</span></span><br><span class="line">&gt; mail</span><br><span class="line"><span class="comment"># 输入 q，查看结束离开</span></span><br><span class="line">&gt; q</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>关于 mail 参考：<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/22163102/you-have-mail-message-in-terminal-os-x">https://stackoverflow.com/questions/22163102/you-have-mail-message-in-terminal-os-x</a></p>
+</blockquote>
+
+      </div>
+    </div>
+  </section>
+</article>
+<!-- go-top -->
+<a id="goTop" class="go-top" type="button">
+  <svg t="1693380723883" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3999" width="20" height="20">
+    <path d="M825.568 555.328l-287.392-289.28C531.808 259.648 523.488 256.576 515.2 256.64 514.08 256.544 513.12 256 512 256c-4.672 0-9.024 1.088-13.024 2.88-4.032 1.536-7.872 3.872-11.136 7.136l-259.328 258.88c-12.512 12.48-12.544 32.736-0.032 45.248 6.24 6.272 14.432 9.408 22.656 9.408 8.192 0 16.352-3.136 22.624-9.344L480 364.288 480 928c0 17.696 14.336 32 32 32s32-14.304 32-32L544 362.72l236.192 237.728c6.24 6.272 14.496 9.44 22.688 9.44s16.32-3.104 22.56-9.312C838.016 588.128 838.048 567.84 825.568 555.328zM864 192 160 192C142.336 192 128 177.664 128 160s14.336-32 32-32l704 0c17.696 0 32 14.336 32 32S881.696 192 864 192z" fill="#ffffff" p-id="4000"></path>
+  </svg>
+</a>
+<script>
+  goTop.addEventListener('click', function(e) {
+    document.querySelector('.post-container').scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  });
+</script>
+</body>
+
+</html>
