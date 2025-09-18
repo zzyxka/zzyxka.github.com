@@ -157,6 +157,30 @@
     
     <article class="post post-list-item">
       <div class="post-title">
+        <a class="post-title-link" href="/2025/09/18/mac%E4%BD%BF%E7%94%A8/mac%E4%BD%BF%E7%94%A8crontab%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/">
+          mac使用crontab定时任务
+        </a>
+      </div>
+      <div class="post-content">
+        <p>Crontab 是 cron table 的缩写，字面意思<strong>日程表</strong>。可以使用 crontab 指令，按照指定的规则&#x2F;周期定时执行某项任务。</p>
+<p>常用指令：</p>
+<ul>
+<li><code>crontab -l</code> 列出目前的时程表(无日程时，执行打印 <code>crontab: no crontab for xxx</code>)</li>
+<li><code>crontab -e</code> 新建一个日程，执行后打开 vim，需要按照指定规则编写并保存(:wq)</li>
+<li><code>crontab -r</code> 删除目前的日程表(执行成功后没有内容打印)</li>
+</ul>
+<p>编写日程的规则：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">*    *    *    *    *</span><br><span class="line">-    -    -    -    -</span><br><span class="line">|    |    |    |    |</span><br><span class="line">|    |    |    |    +----- 星期中星期几 (0 - 6) (星期天 为0)</span><br><span class="line">|    |    |    +---------- 月份 (1 - 12)</span><br><span class="line">|    |    +--------------- 一个月中的第几天 (1 - 31)</span><br><span class="line">|    +-------------------- 小时 (0 - 23)</span><br><span class="line">+------------------------- 分钟 (0 - 59)</span><br></pre></td></tr></table></figure>
+
+<p>举例：每天 19:45 执行 <a target="_blank" rel="noopener" href="http://auto-task.sh/">auto-task.sh</a> 脚本中的 git 命令，来保存提交 Note目录 下的笔记。</p>
+      </div>
+      <div class="post-meta">
+        <a class="post-read-more-link" href="/2025/09/18/mac%E4%BD%BF%E7%94%A8/mac%E4%BD%BF%E7%94%A8crontab%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/">查看全文</a>
+      </div>
+    </article>
+    
+    <article class="post post-list-item">
+      <div class="post-title">
         <a class="post-title-link" href="/2025/09/18/mac%E4%BD%BF%E7%94%A8/mac%E4%B8%8A%E7%9A%84open%E5%91%BD%E4%BB%A4/">
           mac上的open命令
         </a>
@@ -220,30 +244,6 @@
       </div>
       <div class="post-meta">
         <a class="post-read-more-link" href="/2025/09/18/mac%E4%BD%BF%E7%94%A8/mac%E6%9D%80%E6%AD%BB%E6%9F%90%E4%B8%AA%E5%8D%A0%E7%94%A8%E7%AB%AF%E5%8F%A3%E7%9A%84%E8%BF%9B%E7%A8%8B/">查看全文</a>
-      </div>
-    </article>
-    
-    <article class="post post-list-item">
-      <div class="post-title">
-        <a class="post-title-link" href="/2025/09/18/mac%E4%BD%BF%E7%94%A8/mac%E4%BD%BF%E7%94%A8crontab%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/">
-          mac使用crontab定时任务
-        </a>
-      </div>
-      <div class="post-content">
-        <p>Crontab 是 cron table 的缩写，字面意思<strong>日程表</strong>。可以使用 crontab 指令，按照指定的规则&#x2F;周期定时执行某项任务。</p>
-<p>常用指令：</p>
-<ul>
-<li><code>crontab -l</code> 列出目前的时程表(无日程时，执行打印 <code>crontab: no crontab for xxx</code>)</li>
-<li><code>crontab -e</code> 新建一个日程，执行后打开 vim，需要按照指定规则编写并保存(:wq)</li>
-<li><code>crontab -r</code> 删除目前的日程表(执行成功后没有内容打印)</li>
-</ul>
-<p>编写日程的规则：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">*    *    *    *    *</span><br><span class="line">-    -    -    -    -</span><br><span class="line">|    |    |    |    |</span><br><span class="line">|    |    |    |    +----- 星期中星期几 (0 - 6) (星期天 为0)</span><br><span class="line">|    |    |    +---------- 月份 (1 - 12)</span><br><span class="line">|    |    +--------------- 一个月中的第几天 (1 - 31)</span><br><span class="line">|    +-------------------- 小时 (0 - 23)</span><br><span class="line">+------------------------- 分钟 (0 - 59)</span><br></pre></td></tr></table></figure>
-
-<p>举例：每天 19:45 执行 <a target="_blank" rel="noopener" href="http://auto-task.sh/">auto-task.sh</a> 脚本中的 git 命令，来保存提交 Note目录 下的笔记。</p>
-      </div>
-      <div class="post-meta">
-        <a class="post-read-more-link" href="/2025/09/18/mac%E4%BD%BF%E7%94%A8/mac%E4%BD%BF%E7%94%A8crontab%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/">查看全文</a>
       </div>
     </article>
     
